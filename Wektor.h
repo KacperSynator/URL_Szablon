@@ -49,8 +49,10 @@ public:
     TYP operator * (const Wektor<TYP,ROZMIAR> & W2) const // SKALARNY
     {
         TYP wynik;
+        wynik=0;
         for(int i=0;i<ROZMIAR;i++)
-            wynik  = wynik +  (*this)[i] * W2[i];
+
+            wynik  = wynik + (*this)[i] * W2[i];
 
         return wynik;
     }

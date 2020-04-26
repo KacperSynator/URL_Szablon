@@ -3,7 +3,7 @@
 #include <iostream>
 
 
-double LZespolona:: KonwersjaLZD()
+double LZespolona:: KonwersjaLZD() const
 {
     if(this->im != 0)
     {
@@ -13,17 +13,17 @@ double LZespolona:: KonwersjaLZD()
     return this->re;
 }
 
-LZespolona LZespolona:: operator = (const double l)
+LZespolona & LZespolona:: operator = (const double l)
 {
-    this->re=l;
-    this->im=0;
+    re=l;
+    im=0;
     return *this;
 }
 
-LZespolona LZespolona:: operator += (const LZespolona & LZ) const
+LZespolona  LZespolona:: operator += (const LZespolona & LZ) const
 {
-    LZespolona LZP=*this;
-    return (LZ+LZP);
+    std::cout<<LZ<<(*this)<<std::endl;
+    return (*this)+LZ;
 }
 LZespolona LZespolona:: operator += (const double & liczba) const
 {
